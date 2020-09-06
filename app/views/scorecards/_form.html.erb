@@ -1,0 +1,22 @@
+<%= form_with(model: scorecard, local: true) do |form| %>
+  <% if scorecard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scorecard.errors.count, "error") %> prohibited this scorecard from being saved:</h2>
+
+      <ul>
+      <% scorecard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :grade %>
+    <%= form.text_field :grade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
